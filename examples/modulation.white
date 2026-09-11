@@ -1,0 +1,36 @@
+// Advanced Signal Processing - Modulation Analysis
+
+fn detect_modulation(signal s, sample_rate sr) {
+    print("Modulation Analysis");
+    print("=");
+    
+    // Analyze signal characteristics
+    spectrum sp = fft(s, 4096);
+    
+    frequency peak = sp.peak();
+    bandwidth bw = sp.bandwidth();
+    f64 snr = sp.snr();
+    
+    print("Peak Frequency: ", peak);
+    print("Occupied Bandwidth: ", bw);
+    print("Signal-to-Noise Ratio: ", snr, " dB");
+    
+    // Modulation classification based on characteristics
+    if (bw < 1000000) {
+        print("Modulation: Narrowband (CW, FSK, PSK)");
+    } else if (bw < 10000000) {
+        print("Modulation: Wideband (FM, AM, BPSK)");
+    } else {
+        print("Modulation: Ultra-wideband (Chirp, UWB)");
+    }
+}
+
+fn main() {
+    sample_rate sr = 10000000;  // 10 MHz
+    
+    // In real use, load actual captured signal
+    // signal s = iq("modulated_signal.iq", sr);
+    // detect_modulation(s, sr);
+    
+    print("Modulation Detection Example (Framework)");
+}

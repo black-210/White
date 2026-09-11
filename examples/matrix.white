@@ -1,0 +1,28 @@
+// Matrix and Vector Operations Example
+
+fn matrix_multiply(f64 a, f64 b, f64 c, f64 d, f64 e, f64 f) -> f64 {
+    // Simple 2x2 matrix multiplication demo
+    // [a b] * [e f] = [ae+bg af+bh]
+    // [c d]   [g h]   [ce+dg cf+dh]
+    
+    f64 ae = a * e;
+    f64 bg = b * 0;  // g = 0 in this example
+    
+    return ae + bg;
+}
+
+fn main() {
+    print("Vector and Matrix Operations");
+    print("=");
+    
+    // Example parameters
+    f64 x = 3.0;
+    f64 y = 4.0;
+    f64 z = 5.0;
+    
+    // Vector magnitude
+    f64 magnitude = sqrt(x*x + y*y + z*z);
+    
+    print("Vector: [", x, ", ", y, ", ", z, "]");
+    print("Magnitude: ", magnitude);
+}

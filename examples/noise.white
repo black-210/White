@@ -1,0 +1,36 @@
+// Noise Analysis and Denoising Example
+
+fn estimate_noise_characteristics(signal s) {
+    print("Noise Characterization");
+    print("=");
+    
+    spectrum sp = fft(s, 4096);
+    
+    // Noise floor estimation
+    f64 noise_floor = sp.noise_floor();
+    f64 snr = sp.snr();
+    
+    print("Noise Floor: ", noise_floor, " dB");
+    print("SNR: ", snr, " dB");
+    
+    // Noise classification
+    if (snr > 20) {
+        print("Signal Quality: Excellent");
+    } else if (snr > 10) {
+        print("Signal Quality: Good");
+    } else if (snr > 3) {
+        print("Signal Quality: Acceptable");
+    } else {
+        print("Signal Quality: Poor");
+    }
+}
+
+fn main() {
+    print("Noise Analysis Example");
+    print("=");
+    
+    // Framework for noise analysis
+    // In real use:
+    // signal s = iq("noisy_signal.iq", sr);
+    // estimate_noise_characteristics(s);
+}
