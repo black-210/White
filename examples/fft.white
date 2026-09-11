@@ -1,0 +1,20 @@
+// FFT Example: Simple frequency analysis
+
+fn main() {
+    print("FFT Example - Analyzing a simple signal");
+    
+    // Create a simple test signal
+    // 1000 samples at 10 kHz sample rate
+    frequency test_freq = 1000.0;  // 1 kHz test signal
+    sample_rate sr = 10000.0;      // 10 kHz sampling
+    
+    // Calculate expected wavelength
+    const SPEED_OF_LIGHT = 299792458.0;
+    f64 wavelength = SPEED_OF_LIGHT / test_freq;
+    
+    print("Test Signal Parameters:");
+    print("  Frequency: 1 kHz");
+    print("  Sample Rate: 10 kHz");
+    print("  Wavelength (radio): ", wavelength, " m");
+    print();
+}

@@ -1,0 +1,39 @@
+// Standard Physics Library for White
+
+const SPEED_OF_LIGHT = 299792458.0;  // m/s
+const PERMITTIVITY_FREE_SPACE = 8.854187817e-12;  // F/m
+const PERMEABILITY_FREE_SPACE = 1.25663706212e-6;  // H/m
+const PLANCK_CONSTANT = 6.62607015e-34;  // J*s
+const BOLTZMANN_CONSTANT = 1.380649e-23;  // J/K
+const ELEMENTARY_CHARGE = 1.602176634e-19;  // C
+const ELECTRON_MASS = 9.1093837015e-31;  // kg
+const PROTON_MASS = 1.67262192369e-27;  // kg
+const AVOGADRO_CONSTANT = 6.02214076e23;  // 1/mol
+
+fn wavelength_from_frequency(frequency f) -> f64 {
+    return SPEED_OF_LIGHT / f;
+}
+
+fn frequency_from_wavelength(f64 lambda) -> frequency {
+    return SPEED_OF_LIGHT / lambda;
+}
+
+fn impedance_free_space() -> f64 {
+    return 376.730313668;  // Ohms
+}
+
+fn wavelength_in_medium(frequency f, f64 relative_permittivity) -> f64 {
+    return wavelength_from_frequency(f) / sqrt(relative_permittivity);
+}
+
+fn friss_path_loss(frequency f, f64 distance) -> f64 {
+    // Friis transmission equation path loss in dB
+    f64 wavelength = wavelength_from_frequency(f);
+    f64 path_loss_linear = (4.0 * PI * distance / wavelength) ^ 2;
+    return 10.0 * log10(path_loss_linear);
+}
+
+fn vswr_from_reflection(f64 reflection_coeff) -> f64 {
+    // VSWR from reflection coefficient
+    return (1.0 + reflection_coeff) / (1.0 - reflection_coeff);
+}

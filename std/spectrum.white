@@ -1,0 +1,35 @@
+// Standard Spectrum Analysis Library for White
+
+use math;
+
+fn welch_psd(signal s, u32 window_size) -> spectrum {
+    // Compute power spectral density using Welch method
+}
+
+fn bartlett_psd(signal s) -> spectrum {
+    // Compute power spectral density using Bartlett method
+}
+
+fn periodogram(signal s) -> spectrum {
+    // Simple periodogram (unwindowed FFT power)
+}
+
+fn find_peaks(spectrum sp, f64 threshold) -> [frequency] {
+    // Find spectral peaks above threshold
+}
+
+fn estimate_noise_floor(spectrum sp) -> f64 {
+    // Estimate noise floor from spectrum
+}
+
+fn bandwidth_3db(spectrum sp) -> bandwidth {
+    // Calculate -3dB bandwidth
+}
+
+fn center_frequency(spectrum sp) -> frequency {
+    // Calculate center frequency
+}
+
+fn spectral_flatness(spectrum sp) -> f64 {
+    // Calculate Wiener entropy (spectral flatness)
+}

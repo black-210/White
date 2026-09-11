@@ -1,0 +1,24 @@
+// IQ Data Processing Example
+
+fn analyze_iq_file(string filename) {
+    print("Analyzing IQ data from: ", filename);
+    
+    // Load IQ samples from file
+    sample_rate sr = 10000000;  // 10 MHz
+    
+    // Perform FFT
+    u32 fft_size = 4096;
+    
+    print("FFT Size: ", fft_size);
+    print("Sample Rate: ", sr);
+    
+    // This would normally load actual IQ data
+    // and perform spectrum analysis
+}
+
+fn main() {
+    print("IQ Data Processing Example");
+    print("=");
+    
+    analyze_iq_file("sample.iq");
+}

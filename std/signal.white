@@ -1,0 +1,32 @@
+// Standard Signal Processing Library for White
+
+use math;
+
+fn hann_window(size: u32) -> [f64] {
+    // Hann window: w[n] = 0.5 * (1 - cos(2*pi*n/(N-1)))
+    // Returns array of window coefficients
+}
+
+fn hamming_window(size: u32) -> [f64] {
+    // Hamming window: w[n] = 0.54 - 0.46 * cos(2*pi*n/(N-1))
+}
+
+fn blackman_window(size: u32) -> [f64] {
+    // Blackman window
+}
+
+fn apply_window(signal s, [f64] window) -> signal {
+    // Apply window function to signal
+}
+
+fn resample(signal s, sample_rate new_sr) -> signal {
+    // Resample signal to new sample rate
+}
+
+fn decimate(signal s, u32 factor) -> signal {
+    // Decimate signal by factor
+}
+
+fn interpolate(signal s, u32 factor) -> signal {
+    // Interpolate signal by factor
+}

@@ -1,0 +1,38 @@
+// Standard Math Library for White
+
+const PI = 3.14159265358979323846;
+const E = 2.71828182845904523536;
+const TAU = 6.28318530717958647692;
+const SQRT2 = 1.41421356237309504880;
+const SQRT_HALF = 0.70710678118654752440;
+
+fn abs(x: f64) -> f64 {
+    if (x < 0.0) {
+        return -x;
+    }
+    return x;
+}
+
+fn min(a: f64, b: f64) -> f64 {
+    if (a < b) {
+        return a;
+    }
+    return b;
+}
+
+fn max(a: f64, b: f64) -> f64 {
+    if (a > b) {
+        return a;
+    }
+    return b;
+}
+
+fn clamp(x: f64, min_val: f64, max_val: f64) -> f64 {
+    if (x < min_val) {
+        return min_val;
+    }
+    if (x > max_val) {
+        return max_val;
+    }
+    return x;
+}

@@ -1,0 +1,28 @@
+// Spectrum Analysis Example
+
+fn analyze_spectrum() {
+    print("Spectrum Analysis Example");
+    
+    // Parameters
+    frequency center_freq = 2400000000;  // 2.4 GHz
+    bandwidth bw = 20000000;             // 20 MHz
+    sample_rate sr = 50000000;           // 50 MHz sample rate
+    
+    print("Analysis Parameters:");
+    print("  Center Frequency: 2.4 GHz");
+    print("  Bandwidth: 20 MHz");
+    print("  Sample Rate: 50 MHz");
+    print();
+    
+    // FFT analysis
+    u32 fft_size = 8192;
+    print("Performing FFT with ", fft_size, " bins");
+    
+    // Frequency resolution
+    f64 freq_resolution = sr / fft_size;
+    print("Frequency Resolution: ", freq_resolution, " Hz");
+}
+
+fn main() {
+    analyze_spectrum();
+}
