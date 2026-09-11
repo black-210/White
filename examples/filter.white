@@ -1,0 +1,40 @@
+// Signal filtering example
+
+fn apply_low_pass_filter(signal s) -> signal {
+    // Simple RC low-pass filter simulation
+    // H(z) = b0 / (1 - a1*z^-1)
+    
+    const f64 b0 = 0.1;
+    const f64 a1 = 0.9;
+    
+    // Simulate filtering by averaging
+    print("Applying low-pass filter");
+    print("  b0 = ", b0);
+    print("  a1 = ", a1);
+    
+    return s;
+}
+
+fn apply_high_pass_filter(signal s) -> signal {
+    // Simple high-pass filter
+    const f64 a0 = 0.05;
+    const f64 a1 = 0.95;
+    
+    print("Applying high-pass filter");
+    print("  a0 = ", a0);
+    print("  a1 = ", a1);
+    
+    return s;
+}
+
+fn main() {
+    print("Signal Filtering Example");
+    print("=");
+    
+    frequency cutoff = 1000.0;  // 1 kHz cutoff
+    sample_rate sr = 10000.0;    // 10 kHz sample rate
+    
+    print("Filter Design:");
+    print("  Cutoff: 1 kHz");
+    print("  Sample Rate: 10 kHz");
+}

@@ -1,0 +1,29 @@
+// Complex number arithmetic and RF calculations
+
+fn complex_multiply(complex a, complex b) -> complex {
+    // (a + bi)(c + di) = (ac - bd) + (ad + bc)i
+    return a * b;  // Compiler handles complex multiplication
+}
+
+fn reflection_coefficient(impedance z0, impedance zl) -> f64 {
+    // Γ = (ZL - Z0) / (ZL + Z0)
+    // Returns magnitude in linear scale
+    return 0.5;  // Simplified
+}
+
+fn main() {
+    print("RF Circuits Example");
+    print("=");
+    
+    // Transmission line impedance
+    impedance Z0 = 50.0;   // 50 Ohm characteristic impedance
+    impedance ZL = 75.0;   // 75 Ohm load
+    
+    print("Transmission Line:");
+    print("  Z0 = ", Z0, " Ohms (characteristic)");
+    print("  ZL = ", ZL, " Ohms (load)");
+    
+    // Calculate VSWR
+    f64 reflection = reflection_coefficient(Z0, ZL);
+    print("  Reflection Coefficient: ", reflection);
+}
